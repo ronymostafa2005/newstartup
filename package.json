@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fontsource/poppins": "^5.1.1",
     "@iconify/react": "^5.0.1",
     "@mui/icons-material": "^5.15.21",
     "@mui/lab": "^5.0.0-alpha.171",
@@ -33,8 +34,6 @@
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
-
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

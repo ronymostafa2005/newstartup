@@ -11,8 +11,7 @@ import { PATH_SITE } from "../../routes/paths";
 // Fonts
 import "@fontsource/poppins";
 import "@fontsource/akaya-kanadaka"; // Font import for styling
-// Background image for hero banner
-import img from "../../assets/images/HomePage/img.png";
+
 //------------------------------------------------------------------
 function HeroBanner() {
   const [boxes, setBoxes] = useState([box1, box2, box3]);
@@ -38,7 +37,8 @@ function HeroBanner() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
-        backgroundImage: `url(${img})`, // إضافة الخلفية بشكل صحيح
+        // تعديل التدرج لإزالة الخط الفاصل بين اللونين مع الحفاظ على الأبيض في الحواف
+        background: "linear-gradient(to bottom, #FFFFFF 0%, #DC92A3 40%, #DC92A3 60%, #FFFFFF 100%)", 
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -66,7 +66,7 @@ function HeroBanner() {
               variant="h4"
               sx={{
                 fontFamily: "'Akaya Kanadaka', sans-serif",
-                color: "#ff69b",
+                color: "#ffff", // تغيير اللون هنا
               }}
             >
               crafted for your brand.
@@ -108,17 +108,20 @@ function HeroBanner() {
                   justifyContent: "end",
                 }}
               >
-                <Box
-                  component="img"
-                  src={boxes[0]}
-                  sx={{
-                    width: "70%",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "scale(1.1)",
-                    },
-                  }}
-                />
+        <Box
+  component="img"
+  src={boxes[0]}
+  sx={{
+    border: "2px solid #ffffff",
+    width: { xs: "80%", sm: "70%" },
+    borderRadius: "50%", // تطبيق border-radius بنسبة 50%
+    transition: "transform 0.3s ease, border 0.3s ease", // إضافة انتقال للحدود
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  }}
+/>
+
               </Grid>
 
               <Grid
@@ -135,7 +138,9 @@ function HeroBanner() {
                   component="img"
                   src={boxes[1]}
                   sx={{
-                    width: "70%",
+                    border: "2px solid #ffffff",
+                    width: { xs: "80%", sm: "70%" },
+                    borderRadius: "50%", // تطبيق border-radius بنسبة 50%
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "scale(1.1)",
@@ -146,8 +151,10 @@ function HeroBanner() {
                   component="img"
                   src={boxes[2]}
                   sx={{
-                    width: "70%",
+                    border: "2px solid #ffffff",
+                    width: { xs: "80%", sm: "70%" },
                     mt: 5,
+                    borderRadius: "50%", // تطبيق border-radius بنسبة 50%
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "scale(1.1)",

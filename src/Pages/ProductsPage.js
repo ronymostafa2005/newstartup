@@ -5,10 +5,6 @@ import { Box, Grid, Typography } from "@mui/material";
 import FilterSection from "../Sections/ProductsPage/FilterSection";
 //__api__
 import { fetchProductsRequest } from "../__api__/products";
-//lottie-react
-import Lottie from "lottie-react";
-//assets
-import emptyBox from "../assets/Animation/empty-box.json";
 //component
 import ProductCard from "../Components/__productsPage/ProductCard";
 
@@ -68,7 +64,7 @@ function ProductsPage() {
               height: "100%",
             }}
           >
-            <Lottie animationData={emptyBox} style={{ width: 300 }} />
+            <Typography variant="h6">No Products Available</Typography>
           </Box>
         ) : (
           <Grid container spacing={5} sx={{ mt: { xs: 0, md: 2 } }}>

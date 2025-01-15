@@ -107,17 +107,24 @@ function CustomDesign() {
           />
         </Grid>
 
-        {/* Text description section */}
-        <Grid item xs={12} md={6} sx={{ px: { xs: 2, md: 5 } }}>
-          <Typography variant="h6" sx={{ color: "black" }}>
-            You have the freedom to create your own custom box packaging,
-            tailored exactly to your needs. Whether it's for branding, gifting,
-            or shipping, you can choose the size, material, design, and even add
-            your own logo or artwork. Our easy-to-use customization tools allow
-            you to bring your vision to life, ensuring your packaging is as
-            unique as your product. Start customizing today and make your
-            packaging stand out!
-          </Typography>
+         {/* Text description section */}
+          <Grid item xs={12} md={6} sx={{ px: { xs: 2, md: 5 }  }}>
+          <Typography
+  variant="h8"
+  sx={{
+    color: "black",
+    
+  }}
+>
+  You have the freedom to create your own custom box packaging,
+  tailored exactly to your needs. Whether it's for branding, gifting,
+  or shipping, you can choose the size, material, design, and even add
+  your own logo or artwork. Our easy-to-use customization tools allow
+  you to bring your vision to life, ensuring your packaging is as
+  unique as your product. Start customizing today and make your
+  packaging stand out!
+</Typography>
+
 
           {/* Button to trigger custom design page */}
           <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>

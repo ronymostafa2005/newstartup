@@ -24,6 +24,7 @@ function LoginPage() {
 
   const formik = useFormik({
     initialValues: {
+      
       email: "",
       password: "",
     },

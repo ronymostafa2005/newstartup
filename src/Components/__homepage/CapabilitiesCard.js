@@ -9,8 +9,8 @@ function CapabilitiesCard({ icon, title, content }) {
     <Box
       sx={{
         display: "flex",
-        borderRadius: 5,
-        p: 3,
+        borderRadius: 4,
+        p: 1,
         cursor: "default",
         transition: "transform 0.3s, box-shadow 0.3s", // Smooth transition
         "&:hover": {
@@ -27,13 +27,13 @@ function CapabilitiesCard({ icon, title, content }) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center", // Center the icon inside the box
-          width: 300,
+          width: 200,
           height: 60,
-          p: 1,
+          p: 0,
           mr: 1,
         }}
       >
-        <Iconify icon={icon} sx={{ width: 50, height: 50 }} />
+        <Iconify icon={icon} sx={{ width: 30, height: 50 }} />
       </Box>
       <Box>
         <Typography variant="h5">{title}</Typography>

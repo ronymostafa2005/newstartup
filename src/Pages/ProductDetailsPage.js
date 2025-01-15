@@ -4,12 +4,9 @@ import {
   Typography,
   Button,
   IconButton,
-  Avatar,
 } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useState, useCallback } from "react";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Iconify from "../Components/Iconify";
 import TopSale from "../Sections/HomePage/TopSale";
 //__api__
@@ -23,22 +20,7 @@ import alertAtom from "../recoil/atoms/alertAtom";
 function ProductDetailsPage() {
   const location = useLocation();
   const { product } = location.state || {}; // Access the product from state
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const triggerAlert = useSetRecoilState(alertAtom);
-
-  // Function to handle image change
-  const handleNextImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex + 1) % product.images.length
-    );
-  };
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + product.images.length) % product.images.length
-    );
-  };
 
   const addToCart = useCallback(async () => {
     addToCartRequest({ product_id: product.id })
@@ -62,32 +44,6 @@ function ProductDetailsPage() {
   return (
     <Box sx={{ my: 10, px: 2 }}>
       <Grid container spacing={5}>
-        {/* Image Section */}
-        <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <IconButton onClick={handlePrevImage}>
-            <ArrowBackIosIcon />
-          </IconButton>
-          <Box sx={{ position: "relative", width: "300px", height: "300px" }}>
-            <img
-              src={product.images[currentImageIndex].image}
-              alt={product.name}
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
-          </Box>
-          <IconButton onClick={handleNextImage}>
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </Grid>
-
         {/* Product Details Section */}
         <Grid item xs={12} md={6}>
           <Typography variant="h4" component="h1" gutterBottom>

@@ -1,5 +1,5 @@
 // MUI
-import { Box, Button, Card, Grid, TextField, Typography } from "@mui/material";
+import { Box, Card, Grid, TextField, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // assets
 import companyLogo from "../assets/companyLogo.png"; // Correctly import the image
@@ -24,13 +24,17 @@ function SignUpPage() {
 
   const formik = useFormik({
     initialValues: {
+      user_type:"customer",
       firstName: "",
       lastName: "",
       email: "",
-      password: "",
       phoneNumber: "",
       address: "",
+      password: "",
+
     },
+
+  
     validationSchema: Yup.object().shape({
       firstName: Yup.string().required("First name is required"),
       lastName: Yup.string().required("Last name is required"),

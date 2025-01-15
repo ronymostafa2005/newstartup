@@ -16,6 +16,8 @@ import alertAtom from "../../recoil/atoms/alertAtom";
 //-------------------------------------------------------
 
 function ProductCard({ product }) {
+  
+  console.log(product);
   const triggerAlert = useSetRecoilState(alertAtom);
 
   const navigate = useNavigate();
@@ -73,16 +75,17 @@ function ProductCard({ product }) {
         },
       }}
     >
-      <Box
-        onClick={handleClick}
-        component="img"
-        src={product.images[0].image}
-        sx={{
-          width: "90%",
-          borderRadius: 10,
-          height: 200,
-        }}
-      />
+    <Box
+  onClick={handleClick}
+  component="img"
+  src={product.images[0].image.replace("image/upload/", "")}
+  sx={{
+    width: "90%",
+    borderRadius: 10,
+    height: 200,
+  }}
+/>
+
       <Typography variant="h5" sx={{ mt: 1 }}>
         {product.name}
       </Typography>

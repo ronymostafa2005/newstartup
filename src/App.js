@@ -5,6 +5,7 @@ import Router from "./routes";
 import ThemeProvider from "./theme/ThemeProvider";
 import AlertComponent from "./Components/Alert";
 import { RecoilRoot } from "recoil";
+import '@fontsource/akaya-kanadaka'; // Weight defaults to regular
 
 //-----------------------------------------------------
 
